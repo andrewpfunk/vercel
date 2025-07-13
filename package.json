@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "couchbase": "^4.5.0"
+    "couchbase": "^4.5.0",
+    "mongodb": "^6.17.0"
   }
 }
