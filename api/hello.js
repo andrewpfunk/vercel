@@ -1,3 +1,5 @@
+const couchbase = require('couchbase');
+
 module.exports = (req, res) => {
     res.status(200).json({ message: 'Hello from Vercel Function!' });
 };
