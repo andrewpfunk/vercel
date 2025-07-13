@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Vercel Function</title>
+</head>
+<body>
+    <h1>Click the button to get a greeting!</h1>
+    <button id="fetchGreeting">Get Greeting</button>
+    <p id="greetingMessage"></p>
+
+    <script>
+        document.getElementById('fetchGreeting').addEventListener('click', async () => {
+            try {
+                // Adjust the URL if your Vercel Function is named differently or in a sub-folder
+                const response = await fetch('/api/hello'); 
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                document.getElementById('greetingMessage').innerText = data.message;
+            } catch (error) {
+                console.error('Error fetching greeting:', error);
+                document.getElementById('greetingMessage').innerText = 'Error fetching greeting.';
+            }
+        });
+    </script>
+</body>
+</html>
